@@ -36,8 +36,8 @@
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -49,7 +49,6 @@
   --z-fixed: 100;
 }
 
-/*========== Responsive typography==========*/
 @media screen and (min-width: 1150px) {
   :root {
     --biggest-font-size: 5.5rem;
@@ -58,7 +57,7 @@
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1.125rem;
-    --small-font-size: .875rem;
+    --small-font-size: 0.875rem;
   }
 }
 
@@ -93,7 +92,9 @@ textarea {
   outline: none;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
 }
@@ -143,66 +144,82 @@ img {
 }
 
 /*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: var(--z-fixed);
+}
 
-/* Navigation for mobile devices */
+.nav {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__logo {
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+}
+.nav__toggle,
+nav__cloes {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
 
+/* Navigation for mobile responsive  */
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: hsla(var(--hue), 70%, 4%, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    width: 80%;
+    height: 100%;
+    padding: 7rem 3rem;
+    transition: right 0.4s;
+  }
+}
 
-/* Show menu */
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
 
+.nav__link {
+  position: relative;
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.4s;
+}
+.nav__link::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--first-color-light);
+  position: absolute;
+  bottom: -0.5rem;
+  transition: width 0.3s;
+}
+.nav__link:hover {
+  color: var(--first-color-light);
+}
+.nav__link:hover::after {
+  width: 30%;
+}
 
-/* Add blur header */
-
-
-/* Active link */
-
-
-/*=============== HOME ===============*/
-
-
-/* Animate scroll icon */
-
-
-/*=============== BUTTON ===============*/
-
-
-/*=============== WORKS ===============*/
-
-
-/*=============== INFO ===============*/
-
-
-/* ABOUT */
-
-
-/* EXPERIENCE */
-
-
-/* SKILLS */
-
-
-/*=============== SERVICES ===============*/
-
-
-/*=============== CONTACT ===============*/
-
-
-/*=============== FOOTER ===============*/
-
-
-/*=============== SCROLL BAR ===============*/
-
-
-/*=============== SCROLL UP ===============*/
-
-
-/* Show Scroll Up */
-
-
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
-
-
-/* For medium devices */
-
-
-/* For large devices */
+.nav__cloes {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+.show-menu {
+  right: 0;
+}

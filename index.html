@@ -10,7 +10,14 @@
       href="assets/img/favicon.png"
       type="image/x-icon"
     />
-
+    <!-- FONTASWOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!--=============== REMIXICONS ===============-->
     <link
       rel="stylesheet"
@@ -19,12 +26,41 @@
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="style/mobile.css"
+    />
 
-    <title>Responsive portfolio website - Bedimcode</title>
+    <title>Responsive portfolio website</title>
   </head>
   <body>
     <!--==================== HEADER ====================-->
-    <header class="header" id="header"></header>
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="" class="nav__logo">Logo</a>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li>
+              <a href="" class="nav__link">Home</a>
+            </li>
+            <li><a href="" class="nav__link">my project</a></li>
+            <li><a href="" class="nav__link">my info </a></li>
+            <li><a href="" class="nav__link">contact</a></li>
+          </ul>
+
+          <!-- close button -->
+          <div class="nav__cloes" id="nav-close">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+        <!-- Toggle button -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fa-sharp fa-solid fa-bars"></i>
+        </div>
+      </nav>
+    </header>
 
     <!--==================== MAIN ====================-->
     <main class="main">
